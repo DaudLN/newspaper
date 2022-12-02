@@ -180,3 +180,5 @@ LOGGING = {
         }
     }
 }
+if not DEBUG:
+    CSRF_TRUSTED_ORIGINS = ['https://web-production-4eeb.up.railway.app/']
