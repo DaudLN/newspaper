@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-nd%@i$3ftg1i4uzz+^nbw-yhfpcq87u-@(xgq9nf(+7m1n8f5l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 CSRF_TRUSTED_ORIGINS = ['https://web-production-4eeb.up.railway.app/',]
-ALLOWED_HOSTS = ['https://web-production-4eeb.up.railway.app/',]
+ALLOWED_HOSTS = ('https://web-production-4eeb.up.railway.app/')
 
 # Application definition
 
@@ -154,30 +154,4 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Bootstrap5 template
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
-
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler'
-        },
-        'file': {
-            'class': 'logging.FileHandler',
-            'filename': 'general.log'
-        }
-    },
-    'loggers': {
-        '': {
-            'handlers': ['console', 'file'],
-            'level': os.environ.get('DJANGO_LOG_LEVEL', 'INFO')
-        }
-    },
-    'formatters': {
-        'verbose': {
-            'format': '{asctime} ({levelname})-{name}-{message}',
-            'style': '{'
-        }
-    }
-}
 
